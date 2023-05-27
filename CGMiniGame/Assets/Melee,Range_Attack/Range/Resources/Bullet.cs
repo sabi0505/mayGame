@@ -26,8 +26,6 @@ public class Bullet : MonoBehaviour
     {
         if (target != null)
         {
-
-
             Vector2 dirvec = target.position - transform.position;
             Vector2 newxtvec = dirvec.normalized * speed * Time.deltaTime;
             rigid.velocity = newxtvec * 1000 * speed;
