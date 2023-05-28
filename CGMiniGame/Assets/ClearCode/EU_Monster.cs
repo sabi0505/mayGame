@@ -7,9 +7,9 @@ public class EU_Monster : MonoBehaviour
     [SerializeField]
     private Transform _target;
     SpriteRenderer renderer;
-    public float speed;
-
-    public int HP = 10;
+    public status Status;
+    public unitCode UnitCode;
+    public int nowHp; 
 
     [SerializeField]
     MonsterSpawnController spawnController;
@@ -25,22 +25,22 @@ public class EU_Monster : MonoBehaviour
     void Update()
     {
         Vector3 dirvec = _target.position - transform.position;
-        Vector2 nextvec = dirvec.normalized * speed * Time.deltaTime;
+        Vector2 nextvec = dirvec.normalized * Status.moveSpeed * Time.deltaTime;
         transform.position += (Vector3)nextvec;
     }
 
-    public void Init(Sprite sprite, int hp)
+    public void Init(Sprite sprite, int nowHp)
     {
         //renderer.sprite = sprite;
-        HP = hp;
+        nowHp = Status.maxHp;
         gameObject.SetActive(true);
     }
 
     public void Damage(int damage)
     {
-        HP -= damage;
+        nowHp -= damage;
 
-        if (HP <= 0)
+        if (nowHp <= 0)
         {
             spawnController.ReturnObject(this);
             gameObject.SetActive(false);

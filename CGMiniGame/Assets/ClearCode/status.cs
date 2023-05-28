@@ -8,19 +8,19 @@ public class status : MonoBehaviour
 {
     public unitCode UnitCode { get; }
     public string name { get; set; }
-    public int hp { get; set; }
+    public int maxHp { get; set; }
     public int atkDmg { get; set; }
     public float moveSpeed { get; set; }
     public float atkRange { get; set; }
 
-    public status(unitCode UnitCode, string name, int hp, int atkDmg, float moveSpeed, float atkRange)
+    public status(unitCode UnitCode, string name, int maxHp, int atkDmg, float moveSpeed, float atkRange)
     {
         this.UnitCode = UnitCode;
-        this.name = name; //¸ó½ºÅÍ ÀÌ¸§ 
-        this.hp = hp; //Ã¼·Â  
-        this.atkDmg = atkDmg; //µ¥¹ÌÁö
-        this.moveSpeed = moveSpeed; //¼Óµµ
-        this.atkRange = atkRange; //°ø°Ý¹üÀ§
+        this.name = name; //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ 
+        this.maxHp = maxHp; //Ã¼ï¿½ï¿½  
+        this.atkDmg = atkDmg; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        this.moveSpeed = moveSpeed; //ï¿½Óµï¿½
+        this.atkRange = atkRange; //ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½
 
     }
 
@@ -35,18 +35,19 @@ public class status : MonoBehaviour
         switch (UnitCode)
         {
             case unitCode.clover:
-                status = new status(UnitCode, "clover",3,1,0.75f,4f);
+                status = new status(UnitCode, "clover",3,1,1f,1f);
                 break;
             case unitCode.heart:
-                status = new status(UnitCode, "heart",6,1,0.75f,4f);
+                status = new status(UnitCode, "heart",6,1,1f,4f);
                 break;
             case unitCode.dia:
-                status = new status(UnitCode, "dia",2,1,0.75f,4f);
+                status = new status(UnitCode, "dia",2,1,1f,4f);
                 break;
             case unitCode.spade:
-                status = new status(UnitCode, "spade",10,1,0.75f,4f);
+                status = new status(UnitCode, "spade",10,1,1f,1f);
                 break;
         }
         return status;
     }
+
 }
