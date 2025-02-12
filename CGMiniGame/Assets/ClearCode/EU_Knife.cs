@@ -6,6 +6,6 @@ public class EU_Knife : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<EU_Monster>().Damage(PlayerDataManager.Instance.SowrdStat);
+        collision.GetComponent<EU_Monster>().Damage(PlayerDataManager.Instance.SwordStat);
     }
 }

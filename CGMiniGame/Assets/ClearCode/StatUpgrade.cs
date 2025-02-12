@@ -9,13 +9,14 @@ public class StatUpgrade : MonoBehaviour
         switch (i)
         {
             case 0:
-                PlayerDataManager.Instance.SowrdStat++;
+                PlayerDataManager.Instance.SwordStat += 20;
                 break;
             case 1:
-                PlayerDataManager.Instance.MagicStat++;
+                PlayerDataManager.Instance.MagicStat += 20;
                 break;
             case 2:
-                PlayerDataManager.Instance.HealthStat++;
+                PlayerDataManager.Instance.HealthStat += 20;
+                PlayerDataManager.Instance.Heal(PlayerDataManager.Instance.HealthStat);
                 break;
         }
     }

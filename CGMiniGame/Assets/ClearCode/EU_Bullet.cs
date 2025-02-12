@@ -30,8 +30,8 @@ public class EU_Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
         {
-            var monster = collision.GetComponent<EU_Monster>();
-            monster.Damage(PlayerDataManager.Instance.MagicStat);
+            var monster = collision.GetComponent<Monster>();
+            monster.Attacked(PlayerDataManager.Instance.MagicStat);
 
             _bulletController.ReturnObject(this);
             gameObject.SetActive(false);

@@ -42,7 +42,6 @@ public class EU_Monster : MonoBehaviour
 
         if (nowHp <= 0)
         {
-            spawnController.ReturnObject(this);
             gameObject.SetActive(false);
         }
     }

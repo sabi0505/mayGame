@@ -17,6 +17,7 @@ public class Knife : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<Enemy>().TakeDamage(1);
+        if(collision.CompareTag("Enemy"))
+            collision.GetComponent<Monster>().Attacked(PlayerDataManager.Instance.SwordStat);
     }
 }

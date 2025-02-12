@@ -10,7 +10,10 @@ public class GameTimer : MonoBehaviour
 
     Slider _timer;
 
-    private float _time;
+    public float _time;
+
+    [SerializeField]
+    GameObject boss;
 
     private void Start()
     {
@@ -21,5 +24,10 @@ public class GameTimer : MonoBehaviour
     {
         _time += Time.deltaTime;
         _timer.value = _time / _gameTime;
+
+        if (_timer.value >= 1)
+        {
+            boss.SetActive(true);
+        }
     }
 }

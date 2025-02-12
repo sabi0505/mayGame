@@ -9,5 +9,5 @@ public enum unitCode
     heart,
     dia,
     spade,
-    cat
+        Boss
 }
